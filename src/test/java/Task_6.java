@@ -26,8 +26,13 @@ public class Task_6 {
         Assert.assertEquals(driver.findElement(By.xpath("//*[@class='inventory_item_price']")).getText(), "$29.99");
         //driver.findElement(By.linkText("Twitter")).click(); // вариант исп-я LinkText
         //driver.findElement(By.partialLinkText("Face")).click(); // вариант исп-я partialLinkText
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@class = 'bm-burger-button']/ancestor::div[@id = 'menu_button_container']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='menu_button_container']/following::div[1]")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button[class~='cart_button']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button[name ^= 're']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button[name $= 'ck']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button[name *= 'sauce']")).isDisplayed());
     }
-
     @AfterTest
     public void postconditions() {
         driver.quit();
