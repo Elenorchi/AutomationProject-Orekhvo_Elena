@@ -43,7 +43,6 @@ public class BasketPage extends BasePage {
         click(continueBtn);
         return this;
     }
-
     public boolean addingButtonDisplayed() {
         return display(addProduct);
     }
@@ -125,5 +124,10 @@ public class BasketPage extends BasePage {
                 sortingByPriceToHigh();
                 break;
         }
+    }
+}
+
+    public boolean addingButtonDisplayed() {
+        return display(addProduct);
     }
 }
