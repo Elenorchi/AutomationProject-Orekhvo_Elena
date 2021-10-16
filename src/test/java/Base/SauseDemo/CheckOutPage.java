@@ -1,5 +1,6 @@
-package Base;
+package Base.SauseDemo;
 
+import Base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

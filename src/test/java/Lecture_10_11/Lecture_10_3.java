@@ -1,11 +1,14 @@
-package Lecture_10;
+package Lecture_10_11;
 
-import Base.BasketPage;
-import Base.LoginPage;
+import Base.SauseDemo.BasketPage;
+import Base.SauseDemo.LoginPage;
 import driver.BaseTest;
+import driver.Listener;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(Listener.class)
 public class Lecture_10_3 extends BaseTest {
     LoginPage log;
     BasketPage basket;
@@ -17,8 +20,8 @@ public class Lecture_10_3 extends BaseTest {
         log.open().Authorization("standard_user", "secret_sauce");
     }
 
-    @Test
-    public void test() {
+    @Test (description = "Проверка сортировки")
+    public void testSort() {
         basket.sorting(BasketPage.sort.highToLow);
         basket.sorting(BasketPage.sort.lowToHigh);
         basket.sorting(BasketPage.sort.AtoZ);

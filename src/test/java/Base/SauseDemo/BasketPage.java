@@ -1,9 +1,11 @@
-package Base;
+package Base.SauseDemo;
 
+import Base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,7 +46,6 @@ public class BasketPage extends BasePage {
         return this;
     }
 
-
     public enum sort {
         AtoZ,
         ZtoA,
@@ -57,35 +58,38 @@ public class BasketPage extends BasePage {
         List<String> normalList = (driver.findElements(products).stream().map(el -> el.getText()).collect(Collectors.toList()));
         Assert.assertEquals(sortedList, normalList);
     }
+
     public void sortingProductsFromZtoA() {
         List<String> sortedList = (driver.findElements(products).stream().map(el -> el.getText()).sorted().collect(Collectors.toList()));
         List<String> normalList = (driver.findElements(products).stream().map(el -> el.getText()).collect(Collectors.toList()));
         Collections.reverse(sortedList);
         Assert.assertEquals(sortedList, normalList);
     }
+
     public void sortingByPriceToHigh() {
         List<Double> sortedList = (driver.findElements(price).stream().map(el -> el.getText())
                 .map(el -> el.replace("$", "")
-                .replace(",", "."))
-                .map(Double ::parseDouble).sorted()
+                        .replace(",", "."))
+                .map(Double::parseDouble).sorted()
                 .collect(Collectors.toList()));
         List<Double> normalList = (driver.findElements(price).stream().map(el -> el.getText())
-                .map(el -> el.replace("$",""))
-                .map(el -> el.replace(",","."))
-                .map(Double ::parseDouble)
+                .map(el -> el.replace("$", ""))
+                .map(el -> el.replace(",", "."))
+                .map(Double::parseDouble)
                 .collect(Collectors.toList()));
         Assert.assertEquals(sortedList, normalList);
     }
+
     public void sortingByPriceToLow() {
         List<Double> sortedList = (driver.findElements(price).stream().map(el -> el.getText())
                 .map(el -> el.replace("$", "")
                         .replace(",", "."))
-                .map(Double ::parseDouble).sorted()
+                .map(Double::parseDouble).sorted()
                 .collect(Collectors.toList()));
         List<Double> normalList = (driver.findElements(price).stream().map(el -> el.getText())
-                .map(el -> el.replace("$",""))
-                .map(el -> el.replace(",","."))
-                .map(Double ::parseDouble)
+                .map(el -> el.replace("$", ""))
+                .map(el -> el.replace(",", "."))
+                .map(Double::parseDouble)
                 .collect(Collectors.toList()));
         Collections.reverse(sortedList);
         Assert.assertEquals(sortedList, normalList);
@@ -105,14 +109,14 @@ public class BasketPage extends BasePage {
                 WebElement option2 = driver.findElement(By.cssSelector("[value=za]"));
                 select2.click();
                 option2.click();
-                sortingProductsFromZtoA ();
+                sortingProductsFromZtoA();
                 break;
             case highToLow:
                 WebElement select3 = driver.findElement(By.className("product_sort_container"));
                 WebElement option3 = driver.findElement(By.cssSelector("[value=hilo]"));
                 select3.click();
                 option3.click();
-                sortingByPriceToLow() ;
+                sortingByPriceToLow();
                 break;
             case lowToHigh:
                 WebElement select4 = driver.findElement(By.className("product_sort_container"));

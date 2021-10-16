@@ -1,9 +1,9 @@
-package Lecture_10;
+package Lecture_10_11;
 
 /* Написать тесты на Логин страницу - 1 позитивный и 5 негативных с
 использованием @DataProvider  */
 
-import Base.LoginPage;
+import Base.SauseDemo.LoginPage;
 import driver.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;

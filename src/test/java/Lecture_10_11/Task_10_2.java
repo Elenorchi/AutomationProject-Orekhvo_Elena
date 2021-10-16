@@ -1,7 +1,7 @@
-package Lecture_10;
+package Lecture_10_11;
 
-import Base.BasketPage;
-import Base.LoginPage;
+import Base.SauseDemo.BasketPage;
+import Base.SauseDemo.LoginPage;
 import driver.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -24,13 +24,11 @@ public class Task_10_2 extends BaseTest {
 
     @Test(invocationCount = 6)
     public void addToCart() throws InterruptedException {
-        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[starts-with(@name, 'add')]")).click();
     }
 
     @Test(invocationCount = 6, dependsOnMethods = "addToCart")
     public void removeFromCart() throws InterruptedException {
-        Thread.sleep(1000);
         driver.findElement(By.xpath("//*[starts-with(@name, 'remove')]")).click();
     }
     @Test (dependsOnMethods = "removeFromCart")
