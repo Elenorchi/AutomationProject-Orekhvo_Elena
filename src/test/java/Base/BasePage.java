@@ -2,12 +2,18 @@ package Base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
     protected WebDriver driver;
+    protected Actions action;
+    protected WebDriverWait wait;
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
+        action = new Actions(driver);
+        wait = new WebDriverWait(driver, 5);
     }
 
     protected void enter(By element, CharSequence... charSequences) {
