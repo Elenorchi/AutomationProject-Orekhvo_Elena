@@ -1,10 +1,13 @@
 package patterns;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class User {
     String username;
     Integer age;
     String email;
-
+/*
     public User() {
     }
 
@@ -36,5 +39,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 }
