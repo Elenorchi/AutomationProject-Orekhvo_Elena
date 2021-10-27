@@ -5,8 +5,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import patterns.PageFactoryPattern;
 import patterns.User;
-import patterns.UserBuilder;
-
 
 public class Lecture_14 extends BaseTest {
     PageFactoryPattern pattern;
@@ -21,15 +19,12 @@ public class Lecture_14 extends BaseTest {
     }
 
     public void building() {
-        userBuilder = new UserBuilder.Builder()
-                .withAge(22)
-                .withUsername("Helen")
-                .withEmail("eleenoree")
-                .build();
+        userBuilder = new UserBuilder.UserBuilderBuilder().age(22).username("someName").email("someemail").build();
     }
     @Test(description = "Trying ValueObject pattern")
     public void valueTest () {
-        pattern.printValue(user);
+       pattern.printValue(user);
+
     }
 
     @Test(description = "Trying Builder pattern")

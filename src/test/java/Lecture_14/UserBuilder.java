@@ -1,10 +1,13 @@
-package patterns;
+package Lecture_14;
 
+import lombok.Builder;
+
+@Builder
 public class UserBuilder {
-String username;
-String email;
-Integer age;
-
+    public String username;
+    public String email;
+    public Integer age;
+/*
     public static class Builder {
         private UserBuilder builder;
 
@@ -31,4 +34,5 @@ Integer age;
             return builder;
         }
     }
+ */
 }
