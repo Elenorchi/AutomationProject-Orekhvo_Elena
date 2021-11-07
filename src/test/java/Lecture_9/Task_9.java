@@ -1,8 +1,8 @@
 package Lecture_9;
 
-import Base.BasketPage;
-import Base.CheckOutPage;
-import Base.LoginPage;
+import Base.SauseDemo.BasketPage;
+import Base.SauseDemo.CheckOutPage;
+import Base.SauseDemo.LoginPage;
 import driver.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
